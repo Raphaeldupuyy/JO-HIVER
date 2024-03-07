@@ -12,9 +12,10 @@ export default class menu extends Phaser.Scene {
       this.load.image("val2","src/assets/val2.png");
       this.load.image("courch1","src/assets/courch1.png");
       this.load.image("courch2","src/assets/courch2.png");
-      this.load.image("st1","src/assets/st1.png");
+      this.load.image("s1","src/assets/s1.png");
       this.load.image("st2","src/assets/st2.png");
-
+      this.load.image("PIregles","src/assets/PI_regles.png");
+      this.load.image("regles","src/assets/regles_jeu.png");
       this.load.audio('panneau', 'src/assets/panneau.mp3');
     }
     
@@ -30,7 +31,8 @@ export default class menu extends Phaser.Scene {
       //on ajoute un bouton de clic, nommé bouton_play
       var bouton_play1 = this.add.image(157, 457, "courch1").setDepth(1);
       var bouton_play2 = this.add.image(485, 420, "val1").setDepth(1);
-      var bouton_play3 = this.add.image(807, 447, "st1").setDepth(1);
+      var bouton_play3 = this.add.image(807, 447, "s1").setDepth(1);
+      var bouton_regles = this.add.image(35,35,"PIregles").setDepth(1);
       
       
     var imagecourch2 = this.add.image(157, 457, "courch2").setDepth(2);
@@ -41,12 +43,15 @@ export default class menu extends Phaser.Scene {
 
     var imagest2 = this.add.image(807, 447, "st2").setDepth(2);
     imagest2.setVisible(false); // Rend l'image "val2" initialement invisible
-     
+    
+    var imageregles = this.add.image(500, 380, "regles").setDepth(2);
+    imageregles.setVisible(false);
       //=========================================================
       //on rend le bouton interratif
       bouton_play1.setInteractive();
       bouton_play2.setInteractive();
       bouton_play3.setInteractive();
+      bouton_regles.setInteractive();
       //Cas ou la souris passe sur le bouton play
       bouton_play1.on("pointerover", () => {
        imagecourch2.setVisible(true);
@@ -56,6 +61,9 @@ export default class menu extends Phaser.Scene {
       });
       bouton_play3.on("pointerover", () => {
         imagest2.setVisible(true);
+      });
+      bouton_regles.on("pointerover", () => {
+        imageregles.setVisible(true);
       });
 
       
@@ -69,6 +77,9 @@ export default class menu extends Phaser.Scene {
       });
       bouton_play3.on("pointerout", () => {
         imagest2.setVisible(false);
+      });
+      bouton_regles.on("pointerout", () => {
+        imageregles.setVisible(false);
       });
   
   

@@ -204,7 +204,7 @@ export default class niveau3 extends Phaser.Scene {
        this.physics.add.collider(groupe_bombes, bords); 
 
    
-    }
+    } 
   
     update() {
       if (gameOver == true && Phaser.Input.Keyboard.JustDown(clavier.space) == true) {
