@@ -27,7 +27,12 @@ var config = {
     }
   },
   
-  scene: [selection, menu, niveau1,niveau2, niveau3] 
+  scene: [selection, menu, niveau1,niveau2, niveau3],
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  }
+
 }
 
 
